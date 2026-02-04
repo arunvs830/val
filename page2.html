@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Lane</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html" class="back-btn">← Back</a>
+            <h1 class="logo">Memory Lane 🎞️</h1>
+            <div></div>
+        </nav>
+
+        <div class="page-content">
+            <div class="gallery-container">
+                <div class="gallery-main">
+                    <img id="mainImage" src="https://via.placeholder.com/600x400/ff69b4/ffffff?text=Your+Photo+Here" alt="Memory">
+                    <p id="memoryText" class="memory-caption">Click on memories below to view</p>
+                </div>
+
+                <div class="gallery-thumbnails">
+                    <div class="thumbnail" onclick="showMemory(0, '❤️ Our first date', 'https://via.placeholder.com/600x400/ff69b4/ffffff?text=First+Date')">
+                        <img src="https://via.placeholder.com/100x100/ff69b4/ffffff?text=Date" alt="Date">
+                        <span>First Date</span>
+                    </div>
+                    <div class="thumbnail" onclick="showMemory(1, '😂 Laughing together', 'https://via.placeholder.com/600x400/ff1493/ffffff?text=Laughing')">
+                        <img src="https://via.placeholder.com/100x100/ff1493/ffffff?text=Laugh" alt="Laugh">
+                        <span>Laughing</span>
+                    </div>
+                    <div class="thumbnail" onclick="showMemory(2, '🌅 A beautiful moment', 'https://via.placeholder.com/600x400/ff69b4/ffffff?text=Sunset')">
+                        <img src="https://via.placeholder.com/100x100/ff69b4/ffffff?text=Sunset" alt="Sunset">
+                        <span>Sunset</span>
+                    </div>
+                    <div class="thumbnail" onclick="showMemory(3, '💑 Us being silly', 'https://via.placeholder.com/600x400/ff1493/ffffff?text=Silly')">
+                        <img src="https://via.placeholder.com/100x100/ff1493/ffffff?text=Silly" alt="Silly">
+                        <span>Being Silly</span>
+                    </div>
+                    <div class="thumbnail" onclick="showMemory(4, '🎉 Adventures together', 'https://via.placeholder.com/600x400/ff69b4/ffffff?text=Adventure')">
+                        <img src="https://via.placeholder.com/100x100/ff69b4/ffffff?text=Adventure" alt="Adventure">
+                        <span>Adventures</span>
+                    </div>
+                    <div class="thumbnail special" onclick="showMemory(5, '💝 Will you be my Valentine?', 'https://via.placeholder.com/600x400/ff1493/ffffff?text=Our+Future')">
+                        <img src="https://via.placeholder.com/100x100/ff1493/ffffff?text=Future" alt="Future">
+                        <span>Our Future</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3em;">
+                <p class="memory-text">These moments with you mean everything to me.</p>
+                <p class="memory-text" style="font-size: 1.3em; color: #ff1493; margin-top: 1em;">Will you be my Valentine? 💝</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showMemory(index, caption, imageUrl) {
+            document.getElementById('mainImage').src = imageUrl;
+            document.getElementById('memoryText').textContent = caption;
+        }
+    </script>
+</body>
+</html>

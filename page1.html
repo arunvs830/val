@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a href="index.html" class="back-btn">← Back</a>
+            <h1 class="logo">Our Love Story 📖</h1>
+            <div></div>
+        </nav>
+
+        <div class="page-content">
+            <div class="story-container">
+                <div class="story-slide current" style="display: block;">
+                    <h2>It All Started...</h2>
+                    <p>The day I met you, everything changed. Your smile, your laugh, the way you made me feel... I knew instantly that you were special.</p>
+                    <div class="story-icon">😊</div>
+                </div>
+
+                <div class="story-slide">
+                    <h2>First Memories</h2>
+                    <p>Every moment with you is a treasure. From our first conversations to our inside jokes, you've filled my life with endless happiness.</p>
+                    <div class="story-icon">💫</div>
+                </div>
+
+                <div class="story-slide">
+                    <h2>Growing Closer</h2>
+                    <p>Day by day, my love for you grew stronger. You've become my best friend, my confidant, and my biggest supporter.</p>
+                    <div class="story-icon">❤️</div>
+                </div>
+
+                <div class="story-slide">
+                    <h2>Today</h2>
+                    <p>Looking at you now, I can't imagine my life without you. You make every day brighter and every moment more meaningful.</p>
+                    <div class="story-icon">✨</div>
+                </div>
+
+                <div class="story-slide">
+                    <h2>The Question...</h2>
+                    <p style="font-size: 1.5em; margin: 2em 0;">Will you be my Valentine? 💝</p>
+                    <p>I want to spend more special moments with you, creating more beautiful memories together.</p>
+                    <div class="story-icon" style="font-size: 3em;">💕</div>
+                </div>
+            </div>
+
+            <div class="story-controls">
+                <button class="story-btn" id="prevBtn" onclick="prevSlide()">← Previous</button>
+                <span class="slide-indicator"><span id="currentSlide">1</span> / <span id="totalSlides">5</span></span>
+                <button class="story-btn" id="nextBtn" onclick="nextSlide()">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.story-slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('current');
+            slides[currentSlide].style.display = 'none';
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('current');
+            slides[currentSlide].style.display = 'block';
+            document.getElementById('currentSlide').textContent = currentSlide + 1;
+            
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) nextSlide();
+            if (e.key === 'ArrowLeft' && currentSlide > 0) prevSlide();
+        });
+
+        showSlide(0);
+    </script>
+</body>
+</html>
