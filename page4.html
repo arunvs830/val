@@ -3,116 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Countdown</title>
+    <title>The truth is... 🥺</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <nav class="navbar">
-            <a href="index.html" class="back-btn">← Back</a>
-            <h1 class="logo">Special Countdown ⏰</h1>
-            <div></div>
-        </nav>
-
-        <div class="page-content">
-            <div class="countdown-container">
-                <h2>Something special is coming...</h2>
-                
-                <div class="countdown" id="countdown">
-                    <div class="countdown-item">
-                        <span class="countdown-value" id="days">0</span>
-                        <span class="countdown-label">Days</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-value" id="hours">0</span>
-                        <span class="countdown-label">Hours</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-value" id="minutes">0</span>
-                        <span class="countdown-label">Minutes</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-value" id="seconds">0</span>
-                        <span class="countdown-label">Seconds</span>
-                    </div>
-                </div>
-
-                <div id="message" style="display: none; text-align: center; margin-top: 2em;">
-                    <h2 style="font-size: 2.5em; color: #ff1493; margin-bottom: 1em;">🎉 THE MOMENT IS HERE! 🎉</h2>
-                    <p style="font-size: 1.5em; margin: 1.5em 0;">Will you be my Valentine? 💝</p>
-                    <p style="font-size: 1.2em; margin: 1.5em 0; line-height: 1.8;">
-                        I've been counting down the moments until I could ask you this.<br>
-                        You mean everything to me, and I want to celebrate our love.<br>
-                        Please say yes! 💕
-                    </p>
-                </div>
-            </div>
-        </div>
+<body class="page-4">
+    <div class="floating-hearts">
+        <span>💖</span><span>💕</span><span>💗</span><span>💖</span><span>💕</span>
+        <span>💗</span><span>💖</span><span>💕</span><span>💗</span><span>💖</span>
     </div>
 
-    <script>
-        // Set countdown to Valentine's Day (Feb 14) or a specific date
-        // Change this to the date you want the countdown to reach
-        const countdownDate = new Date("February 14, 2026 00:00:00").getTime();
+    <div class="progress-bar">
+        <div class="progress" style="width: 80%;"></div>
+    </div>
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
+    <div class="container fade-in">
+        <div class="cute-icon pulse">💝</div>
+        
+        <h1 class="title-cursive">The truth is...</h1>
+        
+        <div class="content-card">
+            <p class="big-text">I really really</p>
+            <p class="big-text emphasis">really really</p>
+            <p class="big-text">like you! 🥺👉👈</p>
+        </div>
 
-            if (distance < 0) {
-                document.getElementById('countdown').style.display = 'none';
-                document.getElementById('message').style.display = 'block';
-                return;
-            }
+        <div class="hearts-burst">
+            <span>💕</span><span>💗</span><span>💖</span>
+            <span>💝</span><span>❤️</span>
+        </div>
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
-        }
-
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-
-        // Add confetti effect when countdown reaches zero
-        document.addEventListener('DOMContentLoaded', () => {
-            setInterval(() => {
-                if (document.getElementById('message').style.display === 'block') {
-                    createConfetti();
-                }
-            }, 300);
-        });
-
-        function createConfetti() {
-            const confetti = document.createElement('div');
-            confetti.style.position = 'fixed';
-            confetti.style.width = '10px';
-            confetti.style.height = '10px';
-            confetti.style.backgroundColor = ['#ff1493', '#ff69b4', '#ffb6c1', '#ffc0cb'][Math.floor(Math.random() * 4)];
-            confetti.style.left = Math.random() * window.innerWidth + 'px';
-            confetti.style.top = '-10px';
-            confetti.style.borderRadius = '50%';
-            confetti.style.pointerEvents = 'none';
-            confetti.style.zIndex = '9999';
-            
-            document.body.appendChild(confetti);
-
-            let top = 0;
-            const speed = Math.random() * 2 + 1;
-            const interval = setInterval(() => {
-                top += speed;
-                confetti.style.top = top + 'px';
-                if (top > window.innerHeight) {
-                    clearInterval(interval);
-                    confetti.remove();
-                }
-            }, 20);
-        }
-    </script>
+        <a href="page5.html" class="cute-btn special-btn">
+            So I want to ask you something... <span class="arrow">→</span>
+        </a>
+    </div>
 </body>
 </html>

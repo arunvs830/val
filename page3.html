@@ -3,111 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Quiz</title>
+    <title>When I'm with you... 🌈</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <nav class="navbar">
-            <a href="index.html" class="back-btn">← Back</a>
-            <h1 class="logo">Love Quiz 🎮</h1>
-            <div></div>
-        </nav>
-
-        <div class="page-content">
-            <div id="quizContainer" class="quiz-container">
-                <div id="quizQuestion" class="quiz-question"></div>
-                <div id="quizOptions" class="quiz-options"></div>
-                <div id="quizProgress" class="quiz-progress"></div>
-            </div>
-
-            <div id="resultContainer" style="display: none;" class="result-container">
-                <h2>Quiz Complete! 🎉</h2>
-                <p id="resultText"></p>
-                <div class="result-message">
-                    <p style="font-size: 1.5em; margin: 1.5em 0;">Will you be my Valentine? 💝</p>
-                </div>
-                <button class="btn" onclick="location.href='index.html'">Back to Home</button>
-            </div>
-        </div>
+<body class="page-3">
+    <div class="floating-hearts">
+        <span>⭐</span><span>🌟</span><span>✨</span><span>⭐</span><span>🌟</span>
+        <span>✨</span><span>⭐</span><span>🌟</span><span>✨</span><span>⭐</span>
     </div>
 
-    <script>
-        const quizzes = [
-            {
-                question: "What's our favorite thing to do together?",
-                options: ["A) Spend time talking", "B) Watch movies", "C) Go on adventures", "D) All of the above"],
-                answer: 3
-            },
-            {
-                question: "What's your favorite thing about me?",
-                options: ["A) My smile", "B) My personality", "C) How I make you feel", "D) Everything"],
-                answer: 3
-            },
-            {
-                question: "What's our song?",
-                options: ["A) Something romantic", "B) Something we both love", "C) A song with our memories", "D) Any song we love"],
-                answer: 3
-            },
-            {
-                question: "Where would you like to go with me?",
-                options: ["A) Somewhere peaceful", "B) An adventure", "C) Anywhere as long as we're together", "D) Your dream destination"],
-                answer: 2
-            },
-            {
-                question: "How do you feel about me?",
-                options: ["A) I really like you", "B) I love you", "C) You mean the world to me", "D) You're my everything"],
-                answer: 3
-            }
-        ];
+    <div class="progress-bar">
+        <div class="progress" style="width: 60%;"></div>
+    </div>
 
-        let currentQuestion = 0;
-        let score = 0;
+    <div class="container fade-in">
+        <div class="cute-icon sparkle">✨</div>
+        
+        <h1 class="title-cursive">When I'm with you...</h1>
+        
+        <div class="content-card">
+            <p class="big-text">Everything feels brighter</p>
+            <p class="big-text">like the world is full of magic! 🪄</p>
+        </div>
 
-        function displayQuestion() {
-            if (currentQuestion < quizzes.length) {
-                const quiz = quizzes[currentQuestion];
-                document.getElementById('quizQuestion').innerHTML = `<h3>${quiz.question}</h3>`;
-                
-                let optionsHTML = '';
-                quiz.options.forEach((option, index) => {
-                    optionsHTML += `<button class="quiz-option" onclick="selectAnswer(${index})">${option}</button>`;
-                });
-                document.getElementById('quizOptions').innerHTML = optionsHTML;
-                
-                document.getElementById('quizProgress').textContent = `Question ${currentQuestion + 1} of ${quizzes.length}`;
-            } else {
-                showResults();
-            }
-        }
+        <div class="stars-container">
+            <span class="star s1">⭐</span>
+            <span class="star s2">🌟</span>
+            <span class="star s3">✨</span>
+            <span class="star s4">⭐</span>
+            <span class="star s5">🌟</span>
+        </div>
 
-        function selectAnswer(index) {
-            if (index === quizzes[currentQuestion].answer) {
-                score++;
-            }
-            currentQuestion++;
-            displayQuestion();
-        }
-
-        function showResults() {
-            document.getElementById('quizContainer').style.display = 'none';
-            document.getElementById('resultContainer').style.display = 'block';
-            
-            let message = '';
-            if (score === quizzes.length) {
-                message = "Perfect score! You know me so well! 🌟";
-            } else if (score >= 4) {
-                message = "Wow! You know me really well! 😊";
-            } else if (score >= 3) {
-                message = "Great job! We have so much in common! 💕";
-            } else {
-                message = "That's okay! This is your chance to learn even more about me! 💗";
-            }
-            
-            document.getElementById('resultText').textContent = message + ` You scored ${score}/${quizzes.length}!`;
-        }
-
-        displayQuestion();
-    </script>
+        <a href="page4.html" class="cute-btn">
+            One more thing... <span class="arrow">→</span>
+        </a>
+    </div>
 </body>
 </html>

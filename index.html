@@ -3,58 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
+    <title>Hey You! 💕</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar">
-            <h1 class="logo">💝 Valentine Ideas 💝</h1>
-        </nav>
+    <div class="floating-hearts">
+        <span>💕</span><span>💗</span><span>💖</span><span>💝</span><span>💕</span>
+        <span>💗</span><span>💖</span><span>💝</span><span>💕</span><span>💗</span>
+    </div>
 
-        <div class="home-content">
-            <div class="hero">
-                <h2>Will You Be My Valentine?</h2>
-                <p>I've prepared 5 special ideas for you. Pick one to reveal my feelings!</p>
+    <div class="container fade-in">
+        <div class="cute-icon bounce-slow">🧸</div>
+        
+        <h1 class="title-cursive">Hey Beautiful!</h1>
+        
+        <p class="subtitle">I have something special to tell you...</p>
+        
+        <div class="envelope" id="envelope" onclick="openEnvelope()">
+            <div class="envelope-flap"></div>
+            <div class="envelope-body">
+                <span class="letter-peek">💌</span>
             </div>
+            <p class="click-hint">tap me!</p>
+        </div>
 
-            <div class="ideas-grid">
-                <div class="idea-card">
-                    <div class="idea-icon">📖</div>
-                    <h3>Our Love Story</h3>
-                    <p>A journey through our memories together</p>
-                    <a href="page1.html" class="btn">Explore →</a>
-                </div>
-
-                <div class="idea-card">
-                    <div class="idea-icon">🎞️</div>
-                    <h3>Memory Lane</h3>
-                    <p>Beautiful photo gallery of us</p>
-                    <a href="page2.html" class="btn">View →</a>
-                </div>
-
-                <div class="idea-card">
-                    <div class="idea-icon">🎮</div>
-                    <h3>Love Quiz</h3>
-                    <p>Test your knowledge about us!</p>
-                    <a href="page3.html" class="btn">Play →</a>
-                </div>
-
-                <div class="idea-card">
-                    <div class="idea-icon">⏰</div>
-                    <h3>Special Countdown</h3>
-                    <p>A surprise waiting for you</p>
-                    <a href="page4.html" class="btn">Start →</a>
-                </div>
-
-                <div class="idea-card">
-                    <div class="idea-icon">💌</div>
-                    <h3>Love Letter</h3>
-                    <p>Words from my heart</p>
-                    <a href="page5.html" class="btn">Read →</a>
-                </div>
-            </div>
+        <div class="hidden-message" id="hiddenMessage">
+            <p class="message-text wiggle">Are you ready for a little adventure? ✨</p>
+            <a href="page1.html" class="cute-btn">
+                Let's Go! <span class="arrow">→</span>
+            </a>
         </div>
     </div>
+
+    <script>
+        function openEnvelope() {
+            const envelope = document.getElementById('envelope');
+            const message = document.getElementById('hiddenMessage');
+            envelope.classList.add('opened');
+            setTimeout(() => {
+                envelope.style.display = 'none';
+                message.classList.add('show');
+            }, 800);
+        }
+    </script>
 </body>
 </html>
