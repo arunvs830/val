@@ -8,25 +8,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body class="page-final">
-    <div class="floating-hearts lots">
-        <span>💕</span><span>💗</span><span>💖</span><span>💝</span><span>💕</span>
-        <span>💗</span><span>💖</span><span>💝</span><span>💕</span><span>💗</span>
-        <span>💕</span><span>💗</span><span>💖</span><span>💝</span><span>💕</span>
+    <!-- EVERYTHING flying! -->
+    <div class="flying-elements ultimate-mode">
+        <span class="fly heart">💕</span>
+        <span class="fly heart">💗</span>
+        <span class="fly heart">💖</span>
+        <span class="fly heart">💝</span>
+        <span class="fly heart">❤️</span>
+        <span class="fly butterfly">🦋</span>
+        <span class="fly butterfly">🦋</span>
+        <span class="fly flower">🌸</span>
+        <span class="fly flower">🌺</span>
+        <span class="fly flower">🌹</span>
+        <span class="fly sparkle">✨</span>
+        <span class="fly sparkle">⭐</span>
+        <span class="fly heart">💕</span>
+        <span class="fly butterfly">🦋</span>
+        <span class="fly flower">🌷</span>
+        <span class="fly heart">💗</span>
+        <span class="fly sparkle">🌟</span>
+        <span class="fly flower">🌸</span>
+        <span class="fly heart">💖</span>
+        <span class="fly butterfly">🦋</span>
     </div>
+
+    <div class="petals-container" id="petals"></div>
+    <div class="everything-rain" id="everythingRain"></div>
 
     <div class="progress-bar">
         <div class="progress" style="width: 100%;"></div>
     </div>
 
     <div class="container fade-in" id="questionContainer">
-        <div class="cute-icon mega-pulse">💝</div>
+        <div class="proposal-scene">
+            <div class="floating-hearts-circle">
+                <span style="--i:0">💕</span>
+                <span style="--i:1">💗</span>
+                <span style="--i:2">💖</span>
+                <span style="--i:3">💝</span>
+                <span style="--i:4">❤️</span>
+                <span style="--i:5">🦋</span>
+                <span style="--i:6">🌸</span>
+                <span style="--i:7">✨</span>
+            </div>
+            <span class="proposal-heart">💝</span>
+        </div>
         
-        <h1 class="title-cursive big-ask">Will you...</h1>
-        <h2 class="title-cursive pink-text">be my Valentine?</h2>
+        <h1 class="title-cursive big-ask rainbow-shimmer">Will you...</h1>
+        <h2 class="title-cursive pink-glow-text">be my Valentine?</h2>
         
-        <div class="cute-bear-asking">
-            <span class="bear">🧸</span>
-            <span class="flower">🌹</span>
+        <div class="cute-bear-scene">
+            <span class="bear-proposal">🧸</span>
+            <span class="rose-offer">🌹</span>
+            <span class="sparkles-around s1">✨</span>
+            <span class="sparkles-around s2">💕</span>
+            <span class="sparkles-around s3">✨</span>
+            <span class="sparkles-around s4">💕</span>
         </div>
 
         <div class="answer-buttons">
@@ -38,91 +75,173 @@
             </button>
         </div>
 
-        <p class="hint-text">(try clicking no... I dare you 😏)</p>
+        <p class="hint-text wiggle-text">(psst... try clicking no 😏)</p>
     </div>
 
     <div class="container celebration" id="celebration" style="display: none;">
         <div class="confetti-container" id="confetti"></div>
+        <div class="fireworks" id="fireworks"></div>
         
         <h1 class="title-cursive yay-text">Yaaay! 🎉</h1>
         
-        <div class="celebration-emojis">
+        <div class="celebration-emojis mega">
             <span>🥳</span><span>💕</span><span>🎊</span><span>💖</span><span>🎉</span>
+            <span>🦋</span><span>🌸</span><span>✨</span><span>💝</span><span>🌹</span>
         </div>
         
-        <p class="celebration-text">I knew you'd say yes!</p>
-        <p class="celebration-text small">You just made me the happiest person ever! 🥹</p>
+        <p class="celebration-text glow-text">I knew you'd say yes!</p>
+        <p class="celebration-text small bounce-slow">You just made me the happiest person ever! 🥹</p>
         
-        <div class="love-explosion">
+        <div class="love-explosion mega-explosion">
             <span>💕</span><span>💗</span><span>💖</span><span>💝</span><span>❤️</span>
-            <span>💕</span><span>💗</span><span>💖</span><span>💝</span><span>❤️</span>
+            <span>🦋</span><span>🌸</span><span>✨</span><span>🌹</span><span>⭐</span>
         </div>
 
-        <p class="final-message">Can't wait to spend Valentine's Day with you! 💝</p>
+        <p class="final-message shimmer">Can't wait to spend Valentine's Day with you! 💝</p>
         
-        <div class="couple-emoji">👫💕</div>
+        <div class="couple-scene">
+            <span class="couple-emoji">👫</span>
+            <span class="floating-love">💕</span>
+            <span class="floating-love l2">💗</span>
+            <span class="floating-love l3">💖</span>
+        </div>
     </div>
 
     <script>
         let noButtonMoves = 0;
-        const messages = [
-            "Nice try! 😜",
-            "Nope, not happening!",
-            "You can't escape! 💕",
-            "Just say yes already! 🥺",
-            "Pretty please? 🙏",
-            "I won't give up! 💪"
-        ];
+        const messages = ["Nice try! 😜", "Nope!", "You can't escape! 💕", "Just say yes! 🥺", "Please? 🙏", "I won't give up! 💪", "Come on! 💖", "Pretty please? 🌸"];
 
         function moveButton() {
             const btn = document.getElementById('noBtn');
-            const container = document.querySelector('.answer-buttons');
-            
             const maxX = window.innerWidth - btn.offsetWidth - 50;
             const maxY = window.innerHeight - btn.offsetHeight - 50;
             
-            const randomX = Math.random() * maxX;
-            const randomY = Math.random() * maxY;
-            
             btn.style.position = 'fixed';
-            btn.style.left = randomX + 'px';
-            btn.style.top = randomY + 'px';
+            btn.style.left = Math.random() * maxX + 'px';
+            btn.style.top = Math.random() * maxY + 'px';
             btn.style.zIndex = '1000';
-            
             btn.textContent = messages[noButtonMoves % messages.length];
             noButtonMoves++;
 
-            if (noButtonMoves > 5) {
+            // Create trail of hearts
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => createTrailHeart(btn), i * 50);
+            }
+
+            if (noButtonMoves > 7) {
                 btn.textContent = "Fine, YES! 💕";
                 btn.onclick = sayYes;
                 btn.onmouseover = null;
+                btn.classList.add('yes-btn');
+                btn.classList.remove('no-btn');
             }
+        }
+
+        function createTrailHeart(btn) {
+            const heart = document.createElement('span');
+            heart.className = 'trail-heart';
+            heart.textContent = ['💕', '💗', '💖', '🦋', '✨'][Math.floor(Math.random() * 5)];
+            heart.style.left = btn.style.left;
+            heart.style.top = btn.style.top;
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1000);
         }
 
         function sayYes() {
             document.getElementById('questionContainer').style.display = 'none';
             document.getElementById('celebration').style.display = 'block';
             document.getElementById('noBtn').style.display = 'none';
-            createConfetti();
+            createMegaCelebration();
         }
 
-        function createConfetti() {
+        function createMegaCelebration() {
             const container = document.getElementById('confetti');
-            const colors = ['#ff69b4', '#ff1493', '#ff6b9d', '#c44569', '#f8b500', '#ff4757'];
-            const emojis = ['💕', '💗', '💖', '💝', '❤️', '🎉', '🎊', '✨'];
+            const items = ['💕', '💗', '💖', '💝', '❤️', '🎉', '🎊', '✨', '🦋', '🌸', '🌹', '⭐', '🌟', '💐', '🥳'];
             
-            for (let i = 0; i < 100; i++) {
+            // Massive confetti burst
+            for (let i = 0; i < 150; i++) {
                 setTimeout(() => {
                     const confetti = document.createElement('span');
                     confetti.className = 'confetti-piece';
-                    confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                    confetti.textContent = items[Math.floor(Math.random() * items.length)];
                     confetti.style.left = Math.random() * 100 + '%';
-                    confetti.style.animationDelay = Math.random() * 3 + 's';
+                    confetti.style.animationDelay = Math.random() * 2 + 's';
+                    confetti.style.fontSize = (Math.random() * 25 + 15) + 'px';
+                    container.appendChild(confetti);
+                }, i * 30);
+            }
+
+            // Continuous celebration
+            setInterval(() => {
+                if (Math.random() > 0.3) {
+                    const confetti = document.createElement('span');
+                    confetti.className = 'confetti-piece';
+                    confetti.textContent = items[Math.floor(Math.random() * items.length)];
+                    confetti.style.left = Math.random() * 100 + '%';
                     confetti.style.fontSize = (Math.random() * 20 + 15) + 'px';
                     container.appendChild(confetti);
-                }, i * 50);
+                    setTimeout(() => confetti.remove(), 5000);
+                }
+            }, 100);
+
+            // Fireworks
+            createFireworks();
+        }
+
+        function createFireworks() {
+            const container = document.getElementById('fireworks');
+            const colors = ['💕', '💗', '💖', '✨', '⭐', '🌟'];
+            
+            setInterval(() => {
+                const x = Math.random() * window.innerWidth;
+                const y = Math.random() * (window.innerHeight / 2);
+                
+                for (let i = 0; i < 12; i++) {
+                    const particle = document.createElement('span');
+                    particle.className = 'firework-particle';
+                    particle.textContent = colors[Math.floor(Math.random() * colors.length)];
+                    particle.style.left = x + 'px';
+                    particle.style.top = y + 'px';
+                    particle.style.setProperty('--angle', (i * 30) + 'deg');
+                    container.appendChild(particle);
+                    setTimeout(() => particle.remove(), 1500);
+                }
+            }, 800);
+        }
+
+        // Create falling everything
+        function createPetals() {
+            const container = document.getElementById('petals');
+            const items = ['💕', '💗', '💖', '🦋', '🌸', '✨', '🌹', '⭐'];
+            for (let i = 0; i < 50; i++) {
+                const petal = document.createElement('span');
+                petal.className = 'petal';
+                petal.textContent = items[Math.floor(Math.random() * items.length)];
+                petal.style.left = Math.random() * 100 + '%';
+                petal.style.animationDuration = (Math.random() * 4 + 5) + 's';
+                petal.style.animationDelay = (Math.random() * 8) + 's';
+                petal.style.fontSize = (Math.random() * 20 + 12) + 'px';
+                container.appendChild(petal);
             }
         }
+
+        function createEverythingRain() {
+            const container = document.getElementById('everythingRain');
+            const items = ['💕', '💗', '💖', '🦋', '🌸', '✨', '🌹', '🌺'];
+            
+            setInterval(() => {
+                const item = document.createElement('span');
+                item.className = 'rain-item';
+                item.textContent = items[Math.floor(Math.random() * items.length)];
+                item.style.left = Math.random() * 100 + '%';
+                item.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                container.appendChild(item);
+                setTimeout(() => item.remove(), 5000);
+            }, 150);
+        }
+
+        createPetals();
+        createEverythingRain();
     </script>
 </body>
 </html>

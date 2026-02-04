@@ -8,34 +8,97 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body class="page-4">
-    <div class="floating-hearts">
-        <span>💖</span><span>💕</span><span>💗</span><span>💖</span><span>💕</span>
-        <span>💗</span><span>💖</span><span>💕</span><span>💗</span><span>💖</span>
+    <!-- Hearts explosion mode -->
+    <div class="flying-elements hearts-mode">
+        <span class="fly heart">💕</span>
+        <span class="fly heart">💗</span>
+        <span class="fly heart">💖</span>
+        <span class="fly heart">💝</span>
+        <span class="fly heart">❤️</span>
+        <span class="fly heart">💕</span>
+        <span class="fly heart">💗</span>
+        <span class="fly heart">💖</span>
+        <span class="fly flower">🌹</span>
+        <span class="fly flower">🌸</span>
+        <span class="fly heart">💝</span>
+        <span class="fly heart">❤️</span>
+        <span class="fly butterfly">🦋</span>
+        <span class="fly heart">💕</span>
+        <span class="fly heart">💗</span>
     </div>
+
+    <div class="petals-container" id="petals"></div>
+    <div class="hearts-rain" id="heartsRain"></div>
 
     <div class="progress-bar">
         <div class="progress" style="width: 80%;"></div>
     </div>
 
     <div class="container fade-in">
-        <div class="cute-icon pulse">💝</div>
+        <div class="mega-heart-container">
+            <span class="mega-heart">💝</span>
+            <span class="heart-ring r1">💕</span>
+            <span class="heart-ring r2">💗</span>
+            <span class="heart-ring r3">💖</span>
+            <span class="heart-ring r4">❤️</span>
+        </div>
         
-        <h1 class="title-cursive">The truth is...</h1>
+        <h1 class="title-cursive shimmer">The truth is...</h1>
         
-        <div class="content-card">
-            <p class="big-text">I really really</p>
-            <p class="big-text emphasis">really really</p>
-            <p class="big-text">like you! 🥺👉👈</p>
+        <div class="content-card glass-card love-glow">
+            <p class="big-text fade-up">I really really</p>
+            <p class="big-text emphasis grow-text fade-up delay-1">really really</p>
+            <p class="big-text emphasis super-grow fade-up delay-2">REALLY</p>
+            <p class="big-text fade-up delay-3">like you! 🥺👉👈</p>
         </div>
 
-        <div class="hearts-burst">
-            <span>💕</span><span>💗</span><span>💖</span>
-            <span>💝</span><span>❤️</span>
+        <div class="love-meter">
+            <div class="meter-label">How much I like you:</div>
+            <div class="meter-bar">
+                <div class="meter-fill"></div>
+            </div>
+            <div class="meter-text">∞ infinity! 💕</div>
         </div>
 
-        <a href="page5.html" class="cute-btn special-btn">
+        <a href="page5.html" class="cute-btn glow-btn special-pulse">
             So I want to ask you something... <span class="arrow">→</span>
         </a>
     </div>
+
+    <script>
+        function createPetals() {
+            const container = document.getElementById('petals');
+            const items = ['💕', '💗', '💖', '💝', '❤️', '🌹', '🌸'];
+            for (let i = 0; i < 40; i++) {
+                const petal = document.createElement('span');
+                petal.className = 'petal heart-fall';
+                petal.textContent = items[Math.floor(Math.random() * items.length)];
+                petal.style.left = Math.random() * 100 + '%';
+                petal.style.animationDuration = (Math.random() * 4 + 5) + 's';
+                petal.style.animationDelay = (Math.random() * 8) + 's';
+                petal.style.fontSize = (Math.random() * 18 + 15) + 'px';
+                container.appendChild(petal);
+            }
+        }
+
+        // Continuous hearts rain
+        function createHeartRain() {
+            const container = document.getElementById('heartsRain');
+            const hearts = ['💕', '💗', '💖', '💝', '❤️'];
+            
+            setInterval(() => {
+                const heart = document.createElement('span');
+                heart.className = 'rain-heart';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                container.appendChild(heart);
+                setTimeout(() => heart.remove(), 4000);
+            }, 200);
+        }
+
+        createPetals();
+        createHeartRain();
+    </script>
 </body>
 </html>

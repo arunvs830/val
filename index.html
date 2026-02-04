@@ -8,43 +8,105 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="floating-hearts">
-        <span>💕</span><span>💗</span><span>💖</span><span>💝</span><span>💕</span>
-        <span>💗</span><span>💖</span><span>💝</span><span>💕</span><span>💗</span>
+    <!-- Animated Background Elements -->
+    <div class="flying-elements">
+        <span class="fly heart">💕</span>
+        <span class="fly heart">💗</span>
+        <span class="fly heart">💖</span>
+        <span class="fly heart">💝</span>
+        <span class="fly heart">❤️</span>
+        <span class="fly butterfly">🦋</span>
+        <span class="fly butterfly">🦋</span>
+        <span class="fly butterfly">🦋</span>
+        <span class="fly flower">🌸</span>
+        <span class="fly flower">🌺</span>
+        <span class="fly flower">🌷</span>
+        <span class="fly flower">🌹</span>
+        <span class="fly sparkle">✨</span>
+        <span class="fly sparkle">⭐</span>
+        <span class="fly sparkle">🌟</span>
+        <span class="fly heart">💕</span>
+        <span class="fly butterfly">🦋</span>
+        <span class="fly flower">🌸</span>
+        <span class="fly heart">💗</span>
+        <span class="fly sparkle">✨</span>
     </div>
 
+    <!-- Floating Petals -->
+    <div class="petals-container" id="petals"></div>
+
     <div class="container fade-in">
-        <div class="cute-icon bounce-slow">🧸</div>
+        <div class="cute-icon bounce-rotate">🧸</div>
         
-        <h1 class="title-cursive">Hey Beautiful!</h1>
+        <h1 class="title-cursive shimmer">Hey Beautiful!</h1>
         
-        <p class="subtitle">I have something special to tell you...</p>
+        <p class="subtitle typing">I have something special to tell you...</p>
         
         <div class="envelope" id="envelope" onclick="openEnvelope()">
             <div class="envelope-flap"></div>
             <div class="envelope-body">
                 <span class="letter-peek">💌</span>
             </div>
-            <p class="click-hint">tap me!</p>
+            <p class="click-hint pulse-text">tap me!</p>
         </div>
 
         <div class="hidden-message" id="hiddenMessage">
-            <p class="message-text wiggle">Are you ready for a little adventure? ✨</p>
-            <a href="page1.html" class="cute-btn">
+            <div class="message-hearts">
+                <span>💕</span><span>💗</span><span>💖</span><span>💗</span><span>💕</span>
+            </div>
+            <p class="message-text rainbow-text">Are you ready for a little adventure? ✨</p>
+            <a href="page1.html" class="cute-btn glow-btn">
                 Let's Go! <span class="arrow">→</span>
             </a>
         </div>
     </div>
 
     <script>
+        // Create falling petals
+        function createPetals() {
+            const container = document.getElementById('petals');
+            const petals = ['🌸', '🌺', '🌷', '💮', '🏵️', '🌼'];
+            
+            for (let i = 0; i < 30; i++) {
+                const petal = document.createElement('span');
+                petal.className = 'petal';
+                petal.textContent = petals[Math.floor(Math.random() * petals.length)];
+                petal.style.left = Math.random() * 100 + '%';
+                petal.style.animationDuration = (Math.random() * 5 + 8) + 's';
+                petal.style.animationDelay = (Math.random() * 10) + 's';
+                petal.style.fontSize = (Math.random() * 15 + 15) + 'px';
+                container.appendChild(petal);
+            }
+        }
+        createPetals();
+
         function openEnvelope() {
             const envelope = document.getElementById('envelope');
             const message = document.getElementById('hiddenMessage');
             envelope.classList.add('opened');
+            
+            // Create burst of hearts
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => createBurstHeart(), i * 50);
+            }
+            
             setTimeout(() => {
                 envelope.style.display = 'none';
                 message.classList.add('show');
             }, 800);
+        }
+
+        function createBurstHeart() {
+            const hearts = ['💕', '💗', '💖', '💝', '❤️', '🦋', '🌸'];
+            const heart = document.createElement('span');
+            heart.className = 'burst-heart';
+            heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.left = '50%';
+            heart.style.top = '50%';
+            heart.style.setProperty('--x', (Math.random() - 0.5) * 300 + 'px');
+            heart.style.setProperty('--y', (Math.random() - 0.5) * 300 + 'px');
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 1000);
         }
     </script>
 </body>

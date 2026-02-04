@@ -8,32 +8,75 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body class="page-1">
-    <div class="floating-hearts">
-        <span>💕</span><span>💗</span><span>💖</span><span>💝</span><span>💕</span>
-        <span>💗</span><span>💖</span><span>💝</span><span>💕</span><span>💗</span>
+    <!-- Animated Background -->
+    <div class="flying-elements">
+        <span class="fly heart">💕</span>
+        <span class="fly heart">💗</span>
+        <span class="fly heart">💖</span>
+        <span class="fly butterfly">🦋</span>
+        <span class="fly butterfly">🦋</span>
+        <span class="fly flower">🌸</span>
+        <span class="fly flower">🌺</span>
+        <span class="fly sparkle">✨</span>
+        <span class="fly heart">💝</span>
+        <span class="fly flower">🌷</span>
+        <span class="fly butterfly">🦋</span>
+        <span class="fly heart">❤️</span>
+        <span class="fly sparkle">🌟</span>
+        <span class="fly flower">🌹</span>
+        <span class="fly heart">💕</span>
     </div>
+
+    <div class="petals-container" id="petals"></div>
 
     <div class="progress-bar">
         <div class="progress" style="width: 20%;"></div>
     </div>
 
     <div class="container fade-in">
-        <div class="cute-icon float">🌙</div>
+        <div class="cute-icon float-spin">🌙</div>
         
-        <h1 class="title-cursive">Do you know...</h1>
+        <h1 class="title-cursive shimmer">Do you know...</h1>
         
-        <div class="content-card">
-            <p class="big-text">Every time I see you smile</p>
-            <p class="big-text">my heart does a little dance 💃</p>
+        <div class="content-card glass-card">
+            <div class="dancing-emojis">
+                <span>💃</span><span>🕺</span><span>💃</span>
+            </div>
+            <p class="big-text fade-up">Every time I see you smile</p>
+            <p class="big-text fade-up delay-1">my heart does a little</p>
+            <p class="big-text emphasis bounce-text fade-up delay-2">dance! 💃✨</p>
         </div>
 
-        <div class="cute-illustration">
-            <span class="heart-beat">❤️</span>
+        <div class="hearts-circle">
+            <span class="orbit-heart" style="--i:0">❤️</span>
+            <span class="orbit-heart" style="--i:1">💕</span>
+            <span class="orbit-heart" style="--i:2">💗</span>
+            <span class="orbit-heart" style="--i:3">💖</span>
+            <span class="orbit-heart" style="--i:4">💝</span>
+            <span class="orbit-heart" style="--i:5">❤️</span>
         </div>
 
-        <a href="page2.html" class="cute-btn">
+        <a href="page2.html" class="cute-btn glow-btn">
             And also... <span class="arrow">→</span>
         </a>
     </div>
+
+    <script>
+        function createPetals() {
+            const container = document.getElementById('petals');
+            const petals = ['🌸', '🌺', '🌷', '💮', '🏵️', '🌼', '💕'];
+            for (let i = 0; i < 25; i++) {
+                const petal = document.createElement('span');
+                petal.className = 'petal';
+                petal.textContent = petals[Math.floor(Math.random() * petals.length)];
+                petal.style.left = Math.random() * 100 + '%';
+                petal.style.animationDuration = (Math.random() * 5 + 8) + 's';
+                petal.style.animationDelay = (Math.random() * 10) + 's';
+                petal.style.fontSize = (Math.random() * 15 + 15) + 'px';
+                container.appendChild(petal);
+            }
+        }
+        createPetals();
+    </script>
 </body>
 </html>

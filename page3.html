@@ -8,36 +8,93 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body class="page-3">
-    <div class="floating-hearts">
-        <span>⭐</span><span>🌟</span><span>✨</span><span>⭐</span><span>🌟</span>
-        <span>✨</span><span>⭐</span><span>🌟</span><span>✨</span><span>⭐</span>
+    <!-- Magic sparkles everywhere -->
+    <div class="flying-elements magic-mode">
+        <span class="fly sparkle">✨</span>
+        <span class="fly sparkle">⭐</span>
+        <span class="fly sparkle">🌟</span>
+        <span class="fly sparkle">💫</span>
+        <span class="fly sparkle">✨</span>
+        <span class="fly heart">💖</span>
+        <span class="fly flower">🌸</span>
+        <span class="fly sparkle">⭐</span>
+        <span class="fly butterfly">🦋</span>
+        <span class="fly sparkle">🌟</span>
+        <span class="fly flower">🌺</span>
+        <span class="fly sparkle">✨</span>
+        <span class="fly heart">💕</span>
+        <span class="fly sparkle">💫</span>
+        <span class="fly sparkle">⭐</span>
     </div>
+
+    <div class="petals-container" id="petals"></div>
+    <div class="magic-dust" id="dust"></div>
 
     <div class="progress-bar">
         <div class="progress" style="width: 60%;"></div>
     </div>
 
     <div class="container fade-in">
-        <div class="cute-icon sparkle">✨</div>
+        <div class="magic-wand">
+            <span class="wand">🪄</span>
+            <span class="magic-stars">✨</span>
+        </div>
         
-        <h1 class="title-cursive">When I'm with you...</h1>
+        <h1 class="title-cursive shimmer rainbow-shimmer">When I'm with you...</h1>
         
-        <div class="content-card">
-            <p class="big-text">Everything feels brighter</p>
-            <p class="big-text">like the world is full of magic! 🪄</p>
+        <div class="content-card glass-card magical-glow">
+            <p class="big-text fade-up">Everything feels</p>
+            <p class="big-text emphasis rainbow-text fade-up delay-1">✨ brighter ✨</p>
+            <p class="big-text fade-up delay-2">like the world is</p>
+            <p class="big-text emphasis fade-up delay-3">full of magic! 🪄💖</p>
         </div>
 
-        <div class="stars-container">
-            <span class="star s1">⭐</span>
-            <span class="star s2">🌟</span>
-            <span class="star s3">✨</span>
-            <span class="star s4">⭐</span>
-            <span class="star s5">🌟</span>
+        <div class="stars-explosion">
+            <span class="explode-star" style="--i:0">⭐</span>
+            <span class="explode-star" style="--i:1">🌟</span>
+            <span class="explode-star" style="--i:2">✨</span>
+            <span class="explode-star" style="--i:3">💫</span>
+            <span class="explode-star" style="--i:4">⭐</span>
+            <span class="explode-star" style="--i:5">🌟</span>
+            <span class="explode-star" style="--i:6">✨</span>
+            <span class="explode-star" style="--i:7">💫</span>
         </div>
 
-        <a href="page4.html" class="cute-btn">
+        <a href="page4.html" class="cute-btn glow-btn magic-btn">
             One more thing... <span class="arrow">→</span>
         </a>
     </div>
+
+    <script>
+        function createPetals() {
+            const container = document.getElementById('petals');
+            const items = ['✨', '⭐', '🌟', '💫', '🌸', '💖'];
+            for (let i = 0; i < 35; i++) {
+                const petal = document.createElement('span');
+                petal.className = 'petal sparkle-fall';
+                petal.textContent = items[Math.floor(Math.random() * items.length)];
+                petal.style.left = Math.random() * 100 + '%';
+                petal.style.animationDuration = (Math.random() * 4 + 6) + 's';
+                petal.style.animationDelay = (Math.random() * 8) + 's';
+                petal.style.fontSize = (Math.random() * 15 + 12) + 'px';
+                container.appendChild(petal);
+            }
+        }
+
+        // Magic dust trail on mouse
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.5) {
+                const dust = document.createElement('span');
+                dust.className = 'magic-particle';
+                dust.textContent = ['✨', '⭐', '🌟'][Math.floor(Math.random() * 3)];
+                dust.style.left = e.pageX + 'px';
+                dust.style.top = e.pageY + 'px';
+                document.body.appendChild(dust);
+                setTimeout(() => dust.remove(), 1500);
+            }
+        });
+
+        createPetals();
+    </script>
 </body>
 </html>
